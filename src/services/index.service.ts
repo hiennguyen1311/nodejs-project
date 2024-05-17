@@ -9,6 +9,9 @@ import path, { dirname } from "path";
 import { Config, EmailConfig } from "@src/config/config.index";
 import LoginRouter from "./router/login.router";
 import { fileURLToPath } from "url";
+import { swaggerSpec } from "./swagger";
+import swaggerUI from "swagger-ui-express";
+import expressOasGenerator from "express-oas-generator";
 
 export const app = express();
 
@@ -53,6 +56,19 @@ mailer.extend(app, EmailConfig);
 
 /** API Router */
 app.use("/", LoginRouter);
+
+/** Swagger */
+app.use(
+	"/api-docs",
+	swaggerUI.serve,
+	swaggerUI.setup(swaggerSpec, {
+		explorer: true,
+		customCssUrl:
+			"https://cdn.jsdelivr.net/npm/swagger-ui-themes@3.0.0/themes/3.x/theme-newspaper.css",
+	})
+);
+
+expressOasGenerator.init(app, {});
 
 export default {
 	app,

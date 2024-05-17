@@ -1,14 +1,22 @@
-import { SignInParams } from "@models/model";
 import { apiResult } from "@utils/utils";
-import express, { Request } from "express";
+import express from "express";
 
 const LoginRouter = express.Router();
 
-LoginRouter.get("/api/v1/sign-in", async (req: Request<SignInParams>, res) => {
+/**
+ * @swagger
+ * /api/v1/sign-in:
+ *   post:
+ *     summary: Sign in users
+ *     description: Retrieve a list of users from JSONPlaceholder. Can be used to populate a list of fake users when prototyping or testing an API.
+ * tags Authentication
+ */
+LoginRouter.post("/api/v1/sign-in", async (req, res) => {
 	const {} = req.query;
-	const { username, password } = req.params;
-	const { authorization } = req.headers;
-	if (authorization) {
+	const {} = req.params;
+	const { username, password } = req.body;
+	const {} = req.headers;
+	if (username && password) {
 		return apiResult(res, true, true, null);
 	} else {
 		return apiResult(res, false, undefined, "Missing Authorization");
