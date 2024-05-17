@@ -51,8 +51,7 @@ express_mailer_1["default"].extend(exports.app, config_index_1.EmailConfig);
 exports.app.use("/", login_router_1["default"]);
 /** Swagger */
 exports.app.use("/api-docs", swagger_ui_express_1["default"].serve, swagger_ui_express_1["default"].setup(swagger_1.swaggerSpec, {
-    explorer: true,
-    customCssUrl: "https://cdn.jsdelivr.net/npm/swagger-ui-themes@3.0.0/themes/3.x/theme-newspaper.css"
+    explorer: true
 }));
 express_oas_generator_1["default"].init(exports.app, {});
 exports["default"] = {

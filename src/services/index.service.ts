@@ -63,8 +63,6 @@ app.use(
 	swaggerUI.serve,
 	swaggerUI.setup(swaggerSpec, {
 		explorer: true,
-		customCssUrl:
-			"https://cdn.jsdelivr.net/npm/swagger-ui-themes@3.0.0/themes/3.x/theme-newspaper.css",
 	})
 );
 

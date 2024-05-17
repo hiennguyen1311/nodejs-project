@@ -41,19 +41,34 @@ var express_1 = require("express");
 var LoginRouter = express_1["default"].Router();
 /**
  * @swagger
+ * resourcePath: /api
+ * description: All about API
+ */
+/**
+ * @swagger
  * /api/v1/sign-in:
  *   post:
  *     summary: Sign in users
  *     description: Retrieve a list of users from JSONPlaceholder. Can be used to populate a list of fake users when prototyping or testing an API.
+ *     parameters:
+ *        - name: username
+ *          description: Your username
+ *          paramType: query
+ *          dataType: string
+ *        - name: password
+ *          description: Your password
+ *          paramType: query
+ *          dataType: string
+ *
  */
 LoginRouter.post("/api/v1/sign-in", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, _b, _c, username, password, _d;
-    return __generator(this, function (_e) {
+    var _a, _b, username, password, _c;
+    return __generator(this, function (_d) {
         _a = req.query;
-        _b = req.params;
-        _c = req.body, username = _c.username, password = _c.password;
-        _d = req.headers;
+        _b = req.body, username = _b.username, password = _b.password;
+        _c = req.headers;
         if (username && password) {
+            res.json({ username: username, password: password });
             return [2 /*return*/, utils_1.apiResult(res, true, true, null)];
         }
         else {
@@ -62,4 +77,15 @@ LoginRouter.post("/api/v1/sign-in", function (req, res) { return __awaiter(void 
         return [2 /*return*/];
     });
 }); });
+/**
+ * @swagger
+ * models:
+ *   User:
+ *     id: User
+ *     properties:
+ *       username:
+ *         type: String
+ *       password:
+ *         type: String
+ */
 exports["default"] = LoginRouter;
