@@ -45,7 +45,6 @@ var LoginRouter = express_1["default"].Router();
  *   post:
  *     summary: Sign in users
  *     description: Retrieve a list of users from JSONPlaceholder. Can be used to populate a list of fake users when prototyping or testing an API.
- * tags Authentication
  */
 LoginRouter.post("/api/v1/sign-in", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, _b, _c, username, password, _d;
