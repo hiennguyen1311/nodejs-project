@@ -1,0 +1,29 @@
+doctype html
+head
+  base(href='/')
+  link(type="text/css" href="/styles.css")
+  style
+    include styles.css
+body
+  // - user = { name: 'bigben', message: 'Welcome to', code: '123456' }
+  div.center
+    div.container
+      div.header
+        p
+          b.titleHeader Hello #{user.name}
+        p.message #{user.message}
+      div
+        div.row
+          p.title.row This is your code:
+          b.code.row #{user.code}
+    div.imageContainer
+      img.image(src="http://64.52.85.41:5000/PhotoAwesome/1562918914490.png")
+      img.image(src="http://64.52.85.41:5000/PhotoAwesome/1562915513905.png")
+      img.image(src="http://64.52.85.41:5000/PhotoAwesome/1562916024977.png")
+    div.footer
+      p.inline Visit our website:
+      a.inline(href="http://64.52.85.41:5000/") PhotoAwesome
+      div
+        p.footerText.inline All right reserved.
+        i.footerText.inline Copy right &copy;.
+     

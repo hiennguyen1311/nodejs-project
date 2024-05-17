@@ -1,0 +1,96 @@
+{
+  "GLOBAL": {
+    "MISSING_TRANSLATE": "*Missing Translation*",
+    "OK": "Ok",
+    "CANCEL": "Cancel",
+    "PROCESSING": "Processing...",
+    "ERROR": "Error",
+    "COPIED": "Copied",
+    "SAVE": "Save"
+  },
+  "ERROR": {
+    "WARNING_SYMBOL": "*",
+    "ERROR_UNDEFINED": "Error undefined",
+    "INVALID_LOGIN": "Invalid Credentials. Please check login information.",
+    "VALIDATIONS": {
+      "EMAIL_REQUIRED": "Email is required",
+      "EMAIL_INVALID": "Please provide a valid email address",
+      "PASSWORD_REQUIRED": "Password is required"
+    }
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "SIGN_UP": "Sign Up",
+    "FORGOT_PASSWORD": "Forgot password?",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "CONTENT": "Or login with",
+    "EMAIL": "Email"
+  },
+  "HOME": {
+    "TITLE": "Home",
+    "SCAN_BARCODE": "Scan Barcode",
+    "TEXT_RECOGNITION": "Text recognition",
+    "LOGOUT": "Logout",
+    "TABS": "Tabs",
+    "MENU": "Menu",
+    "SCAN": "Scan",
+    "TEXT": "Recognition",
+    "PROFILE": "Profile",
+    "CONTENT": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+  },
+  "TEXT_RECOGNITION": {
+    "TITLE": "Text recognition",
+    "SELECT": "Select image",
+    "CAPTURE": "Capture",
+    "ANALYZE": "Analyze"
+  },
+  "SCAN": {
+    "TITLE": "Scan"
+  },
+  "PROFILE": {
+    "LOGOUT": "Logout",
+    "LOGOUT_CONFIRM": "Do you want to logout?"
+  },
+  "MAIN": {
+    "TITLE": "List of Features",
+    "MENU": "Menu UI",
+    "TABS": "Tabs UI",
+    "NATIVE": "Native APIS Example",
+    "API_MANAGEMENT": "API Management",
+    "GOOGLE_MAP": "Google Map",
+    "NETWORK": "Network",
+    "DEVICE_INFORMATION": "Device Information",
+    "STORE_MANAGEMENT": "Store management",
+    "UI": "Components",
+    "NOTIFICATION": "Notification"
+  },
+  "LANGUAGES": {
+    "TITLE": "Languages"
+  },
+  "CAMERA": {
+    "TITLE": "Camera options",
+    "MESSAGE": "Select camera options",
+    "OPEN_CAMERA": "Open camera",
+    "OPEN_LIBRARY": "Open library"
+  },
+  "NETWORK": {
+    "TITLE": "Network",
+    "CONNECTED": "Connected: {{connected}}",
+    "CONNECTION_TYPE": "Connection type: {{connection_type}}"
+  },
+  "DEVICE_INFORMATION": {
+    "TITLE": "Device information",
+    "BATTERY": "Battery: {{battery}}%",
+    "ID": "ID: {{id}}",
+    "IS_CHARGING": "Is charging: {{is_charging}}",
+    "INFO": "Info: {{info}}",
+    "LANGUAGE": "Language: {{language}}",
+    "LANGUAGE_TAG": "Language tag: {{language_tag}}"
+  },
+  "NOTIFICATION": {
+    "PUSH_LOCAL": "Push local notification",
+    "PERMISSON": "Check Permission",
+    "PERMISSON_EXACT": "Check Permission exact notification"
+  }
+}
