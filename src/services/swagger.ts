@@ -1,3 +1,4 @@
+import { Config } from "@src/config/config.index";
 import path from "path";
 import swaggerJSDoc from "swagger-jsdoc";
 
@@ -19,7 +20,7 @@ const swaggerDefinition = {
 	},
 	servers: [
 		{
-			url: "http://localhost:7000",
+			url: `http://localhost:${Config.PORT}`,
 		},
 	],
 };

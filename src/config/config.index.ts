@@ -1,5 +1,5 @@
 export const Config = {
-	PORT: 7000,
+	PORT: 5001,
 	DIR: "/NodeProject",
 };
 
