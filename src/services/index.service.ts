@@ -9,7 +9,7 @@ import path, { dirname } from "path";
 import { Config, EmailConfig } from "@src/config/config.index";
 import LoginRouter from "./router/login.router";
 import { fileURLToPath } from "url";
-import { swaggerSpec } from "./swagger";
+import { swaggerOutputFile, swaggerSpec } from "./swagger";
 import swaggerUI from "swagger-ui-express";
 import expressOasGenerator from "express-oas-generator";
 
@@ -61,7 +61,7 @@ app.use("/", LoginRouter);
 app.use(
 	"/api-docs",
 	swaggerUI.serve,
-	swaggerUI.setup(swaggerSpec, {
+	swaggerUI.setup(swaggerOutputFile, {
 		explorer: true,
 	})
 );

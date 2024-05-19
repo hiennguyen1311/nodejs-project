@@ -1,3 +1,3 @@
 import service from "@services";
 
-service.server;
+export default service.server;
