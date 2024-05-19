@@ -15,6 +15,8 @@ const LoginRouter = express.Router();
  *   post:
  *     summary: Sign in users
  *     description: Retrieve a list of users from JSONPlaceholder. Can be used to populate a list of fake users when prototyping or testing an API.
+ *     tags:
+ *     - Authentication
  *     parameters:
  *        - name: username
  *          description: Your username
@@ -24,7 +26,13 @@ const LoginRouter = express.Router();
  *          description: Your password
  *          paramType: query
  *          dataType: string
- *
+ *     responses:
+ *      200:
+ *        description: Created
+ *      404:
+ *        description: Not Found
+ *      500:
+ *        description: Server Error
  */
 LoginRouter.post("/api/v1/sign-in", async (req, res) => {
 	const {} = req.query;
