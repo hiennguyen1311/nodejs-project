@@ -8,7 +8,7 @@ import multer from "multer";
 import path from "path";
 import { Config, EmailConfig } from "@src/config/config.index";
 import LoginRouter from "./router/login.router";
-import { swaggerSpec } from "./swagger";
+import { swaggerOutputFile } from "./swagger/swagger";
 import swaggerUI from "swagger-ui-express";
 import expressOasGenerator from "express-oas-generator";
 import UserRouter from "./router/user.router";
@@ -61,7 +61,7 @@ app.use("/", UserRouter);
 app.use(
 	"/api",
 	swaggerUI.serve,
-	swaggerUI.setup(swaggerSpec, {
+	swaggerUI.setup(swaggerOutputFile, {
 		explorer: true,
 	})
 );

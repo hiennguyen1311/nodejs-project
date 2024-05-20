@@ -6,7 +6,7 @@ export const apiSwaggerDoc = {
 				summary: "Create a user",
 				security: [
 					{
-						apiKeyAuth: [],
+						ApiKeyAuth: [],
 					},
 				],
 				requestBody: {
@@ -31,6 +31,26 @@ export const apiSwaggerDoc = {
 				responses: {
 					"200": {
 						$ref: "#/components/responses/200",
+					},
+				},
+			},
+		},
+		"/api/v1/profile": {
+			get: {
+				tags: ["Profile"],
+				summary: "Get user profile",
+				security: [
+					{
+						ApiKeyAuth: [],
+						bearerAuth: [],
+					},
+				],
+				responses: {
+					"200": {
+						$ref: "#/components/responses/200",
+					},
+					"401": {
+						$ref: "#/components/responses/401",
 					},
 				},
 			},

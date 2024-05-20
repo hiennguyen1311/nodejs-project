@@ -26,10 +26,11 @@
         "in": "header",
         "scheme": "bearer",
         "bearerFormat": "JWT",
-        "name": " Bearer Token"
+        "name": "Authorizatiom"
       },
-      "apiKeyAuth": {
+      "ApiKeyAuth": {
         "type": "apiKey",
+        "in": "header",
         "name": "X-API-KEY"
       }
     },
@@ -51,7 +52,7 @@
   "host": "localhost:5001",
   "secuirty": {
     "bearerAuth": [],
-    "apiKeyAuth": []
+    "ApiKeyAuth": []
   },
   "paths": {
     "/api/v1/sign-in": {
@@ -62,7 +63,7 @@
         "summary": "Create a user",
         "security": [
           {
-            "apiKeyAuth": []
+            "ApiKeyAuth": []
           }
         ],
         "requestBody": {
@@ -90,6 +91,28 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/200"
+          }
+        }
+      }
+    },
+    "/api/v1/profile": {
+      "get": {
+        "tags": [
+          "Profile"
+        ],
+        "summary": "Get user profile",
+        "security": [
+          {
+            "ApiKeyAuth": [],
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
           }
         }
       }
