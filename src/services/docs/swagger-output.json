@@ -1,10 +1,9 @@
 {
-  "swagger": "2.0",
-  "openapi": "3.1.0",
+  "openapi": "3.0.0",
   "info": {
-    "title": "My API",
+    "title": "My NodeJS API",
     "version": "1.0.0",
-    "description": "My API Description 123",
+    "description": "NodeJS, Express, Swagger",
     "license": {
       "name": "MIT",
       "url": "https://spdx.org/licenses/MIT.html"
@@ -20,47 +19,81 @@
       "url": "http://localhost:5001"
     }
   ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "in": "header",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "name": " Bearer Token"
+      },
+      "apiKeyAuth": {
+        "type": "apiKey",
+        "name": "X-API-KEY"
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "OK"
+      },
+      "401": {
+        "description": "Access token is missing or invalid"
+      },
+      "404": {
+        "description": "Not found"
+      },
+      "500": {
+        "description": "Internal server"
+      }
+    }
+  },
+  "host": "localhost:5001",
+  "secuirty": {
+    "bearerAuth": [],
+    "apiKeyAuth": []
+  },
   "paths": {
     "/api/v1/sign-in": {
       "post": {
-        "description": "",
-        "parameters": [
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Create a user",
+        "security": [
           {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "username": {
-                  "example": "any"
-                },
-                "password": {
-                  "example": "any"
+            "apiKeyAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "username",
+                  "password"
+                ],
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
                 }
               }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
-            "description": "OK"
+            "$ref": "#/components/responses/200"
           }
         }
       }
     }
   },
-  "components": {
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
-      }
-    }
-  },
-  "security": [
-    {
-      "bearerAuth": []
-    }
-  ]
+  "tags": []
 }

@@ -5,18 +5,17 @@ import cors from "cors";
 import bearerToken from "express-bearer-token";
 import mailer from "express-mailer";
 import multer from "multer";
-import path, { dirname } from "path";
+import path from "path";
 import { Config, EmailConfig } from "@src/config/config.index";
 import LoginRouter from "./router/login.router";
-import { fileURLToPath } from "url";
-import { swaggerOutputFile, swaggerSpec } from "./swagger";
+import { swaggerSpec } from "./swagger";
 import swaggerUI from "swagger-ui-express";
 import expressOasGenerator from "express-oas-generator";
+import UserRouter from "./router/user.router";
 
 export const app = express();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.resolve();
+export const __dirname = path.resolve();
 
 dotenv.config();
 
@@ -26,7 +25,7 @@ const corsOptions = {
 };
 
 export const server = app.listen(Config.PORT, () =>
-	console.log("App listening on port " + Config.PORT)
+	console.log("\x1b[32m", "App listening on port " + Config.PORT)
 );
 
 /** Config API Request */
@@ -56,12 +55,13 @@ mailer.extend(app, EmailConfig);
 
 /** API Router */
 app.use("/", LoginRouter);
+app.use("/", UserRouter);
 
 /** Swagger */
 app.use(
-	"/api-docs",
+	"/api",
 	swaggerUI.serve,
-	swaggerUI.setup(swaggerOutputFile, {
+	swaggerUI.setup(swaggerSpec, {
 		explorer: true,
 	})
 );
